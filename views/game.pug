@@ -1,0 +1,25 @@
+extends layout.pug
+
+block content
+  .game-window.js-game-window
+    .menu-options.js-menu-options
+    .js-moves-wrapper
+    .game-arena.js-game-arena
+
+  .modal-wrapper.js-modal-player-name-input.hide
+    .modal
+      .modal-content
+        input.js-name(type="text", placeholder="Enter you name", autocomplete="off", maxlength="29")
+      .modal-footer
+        button.js-cta(href="#") Play
+
+  .modal-wrapper.js-modal-finishers.hide
+    .modal
+      .modal-content.js-modal-content
+      .modal-footer
+        button.play-again.js-play-again(href="#") Play Again
+
+
+block bottom_scripts
+  script(src="/socket.io/socket.io.min.js")
+  script(src="/static/js/game-client.js")

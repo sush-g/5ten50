@@ -1,0 +1,29 @@
+{
+  "name": "5ten50",
+  "version": "1.0.0",
+  "description": "5ten50 game",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha test/**/*.js test/*.js",
+    "start": "node server.js"
+  },
+  "author": "Sushant Gupta",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "keymirror": "^0.1.1",
+    "pug": "^3.0.2",
+    "socket.io": "^3.1.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-minify": "0.0.15",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
