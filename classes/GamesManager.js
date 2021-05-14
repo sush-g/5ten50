@@ -105,6 +105,15 @@ class GamesManager {
     }
   }
 
+  _handleResetGame(socket, io) {
+    if (this._sockets.hasOwnProperty(socket.id)) {
+      const {game_id, player_name} = this._sockets[socket.id];
+      const game = this._games[game_id];
+      game.resetPlayers();
+      this._broadcastGameData(io, game);
+    }
+  }
+
   _handleDisconnect(socket, io) {
     if (this._sockets.hasOwnProperty(socket.id)) {
       const {game_id, player_name} = this._sockets[socket.id];
@@ -138,6 +147,9 @@ class GamesManager {
     });
     socket.on(socket_events.game_data, ({game_id})=> {
       this._handleSocketEvent(socket, io, this._handleGameData, game_id);
+    });
+    socket.on(socket_events.reset_game, () => {
+      this._handleSocketEvent(socket, io, this._handleResetGame);
     });
     socket.on(socket_events.disconnect, () => {
       this._handleSocketEvent(socket, io, this._handleDisconnect);

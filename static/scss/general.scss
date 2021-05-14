@@ -1,8 +1,39 @@
+$clr_black: #000;
+$clr_white: #fff;
+$clr_blue: #1982c4;
+$clr_green: #8ac926;
+$clr_yellow: #ffca3a;
+$clr_red: #ff595e;
+$clr_dark_blue: #6a4c93;
+
+$move_base_size: 64px;
+$move_border_size: 2px;
+
 body {
   position: relative;
   font-family: monospace;
   font-size: 14px;
   line-height: 1.3em;
+}
+
+input {
+  min-height: 36px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0px 10px;
+}
+
+button {
+  height: 36px;
+  padding: 0 20px;
+  cursor: pointer;
+  background-color: lighten($clr_blue, 25%);
+  color: $clr_black;
+  border: 2px solid $clr_black;
+  &:hover {
+    background-color: darken($clr_blue, 10%);
+    color: $clr_white;
+  }
 }
 
 .modal-wrapper {
@@ -16,4 +47,11 @@ body {
   align-items: center;
   justify-content: center;
   align-self: center;
+  .modal {
+    padding: 20px;
+    background: #eee;
+    min-height: 33vh;
+    min-width: 33vw;
+    border: 3px solid;
+  }
 }

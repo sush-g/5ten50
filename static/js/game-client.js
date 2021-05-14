@@ -172,7 +172,7 @@
       }
     }
     $(jss.moves_wrapper).html(
-      _renderMovesSection(instruction_html, selected_move);
+      _renderMovesSection(instruction_html, selected_move)
     );
     _setAdvantageMove();
   }
@@ -216,7 +216,7 @@
     $(jss.finishers_modal).removeClass('hide');
   }
 
-  function _hideModalForFinishers();() {
+  function _hideModalForFinishers() {
     $(jss.finishers_modal).addClass('hide');
   }
 
